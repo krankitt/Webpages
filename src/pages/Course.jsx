@@ -64,6 +64,13 @@ const Course = () => {
 
   return (
     <div className="bg-gray-300 min-h-screen">
+      <div className="bg-gradient-to-r from-sky-500 to-indigo-600 py-20 text-center mb-4">
+        <h1 className="text-5xl font-bold text-white">Video Tutorials</h1>
+        <p className="text-white/80 mt-4 max-w-3xl mx-auto">
+          Learn programming with easy-to-follow video tutorials created by
+          industry experts. Start learning today and improve your skills.
+        </p>
+      </div>
       <div className="bg-white p-12 rounded-2xl w-10/12 mx-auto flex gap-2">
         <div className="w-[350px] border border-gray-300 p-6 rounded-lg">
           <h1 className="text-lg font-semibold mb-3">Add Products</h1>
@@ -124,25 +131,44 @@ const Course = () => {
             </button>
           </form>
         </div>
-        <div className="flex-1 border border-gray-300 p-6 rounded-lg grid grid-cols-2 gap-2">
+        <div className="flex-1 border border-gray-300 p-6 rounded-lg grid grid-cols-2 gap-6">
           {items.map((item) => (
-            <div key={item.id} className="border border-gray-300 rounded-lg">
-              <img src={item.image} alt="product" />
-              <div className="p-4">
-                <h1 className="capitalize font-medium">{item.title}</h1>
-                <p className="text-black/60">{item.description.slice(0, 30)}</p>
-                <div className="mt--2 flex items-center gap-3">
-                  <h1>
+            <div
+              key={item.id}
+              className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col hover:shadow-xl transition duration-300"
+            >
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-52 object-cover"
+              />
+
+              <div className="p-5 flex flex-col flex-1">
+                <h1 className="text-xl font-semibold capitalize">
+                  {item.title}
+                </h1>
+
+                <p className="text-gray-600 mt-2 flex-1">
+                  {item.description.slice(0, 60)}...
+                </p>
+
+                <div className="flex items-center gap-3 mt-4">
+                  <span className="text-xl font-bold text-green-600">
                     ₹
                     {(item.price - (item.price * item.discount) / 100).toFixed(
                       2
                     )}
-                  </h1>
-                  <del>₹{item.price}</del>
-                  <p>({item.discount}%)</p>
+                  </span>
+
+                  <del className="text-gray-400">₹{item.price}</del>
+
+                  <span className="text-red-500 font-medium">
+                    {item.discount}% OFF
+                  </span>
                 </div>
-                <button className="bg-green-500 py-2.5 w-full mt-3 rounded text-white font-medium active:scale-80 trasition duration-300">
-                  Buy now
+
+                <button className="bg-indigo-600 text-white w-full py-3 rounded-lg mt-5 hover:bg-indigo-700 active:scale-95 transition duration-300">
+                  Buy Now
                 </button>
               </div>
             </div>
