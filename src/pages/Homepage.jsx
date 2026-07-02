@@ -19,7 +19,7 @@ import s1 from "../assets/s1.avif";
 import t1 from "../assets/reactjs.jpeg";
 import t2 from "../assets/nodejs.png";
 import t3 from "../assets/mongoDB.png";
-import t4 from "../assets/java-programming.jpg";
+import t4 from "../assets/Java-Programming.jpg";
 import t5 from "../assets/python.jpg";
 import t6 from "../assets/c++.png";
 
