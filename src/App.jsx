@@ -247,6 +247,7 @@ import Contactus from "./pages/Contactus";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import "animate.css";
+import { ToastContainer } from "react-toastify";
 
 const App = () => {
   return (
@@ -263,6 +264,7 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
         </Routes>
       </BrowserRouter>
+      <ToastContainer />
     </div>
   );
 };
